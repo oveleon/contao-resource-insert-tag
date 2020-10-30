@@ -1,0 +1,8 @@
+services:
+    contao_resource_insert_tag.listener.insert_tags:
+        class: Oveleon\ContaoResourceInsertTag\EventListener\InsertTagsListener
+        arguments:
+            - '@contao.framework'
+        tags:
+          - { name: contao.hook, hook: replaceInsertTags }
+        public: true

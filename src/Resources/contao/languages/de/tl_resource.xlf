@@ -1,0 +1,54 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_resource.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_resource.title_legend">
+        <source>Title / Alias</source>
+        <target>Titel / Alias</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.resource_legend">
+        <source>Resource</source>
+        <target>Quelle</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.title.0">
+        <source>Title</source>
+        <target>Titel</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.title.1">
+        <source>Title of resource</source>
+        <target>Bitte geben Sie einen Quellen-Titel an.</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.alias.0">
+        <source>Alias</source>
+        <target>Alias</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.alias.1">
+        <source>Enter the alias here</source>
+        <target>Geben Sie hier den Alias an</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.source.0">
+        <source>Source url</source>
+        <target>Quell-URL</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.source.1">
+        <source>Enter the source URL here</source>
+        <target>Geben Sie hier die Quell-URL an</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.cache.0">
+        <source>Cache resource</source>
+        <target>Quelle zwischenspeichern</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.cache.1">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tl_resource.dataType.0">
+        <source>Data-Type</source>
+        <target>Data-Type</target>
+      </trans-unit>
+      <trans-unit id="tl_resource.dataType.1">
+        <source></source>
+        <target></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

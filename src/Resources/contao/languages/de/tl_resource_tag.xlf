@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_resource_tag.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_resource_tag.settings_legend">
+        <source>Alias &amp; Path</source>
+        <target>Alias &amp; Pfad</target>
+      </trans-unit>
+      <trans-unit id="tl_resource_tag.alias.0">
+        <source>Alias</source>
+        <target>Alias</target>
+      </trans-unit>
+      <trans-unit id="tl_resource_tag.alias.1">
+        <source>Enter the alias here</source>
+        <target>Geben Sie hier den Alias an</target>
+      </trans-unit>
+      <trans-unit id="tl_resource_tag.path.0">
+        <source>Path to value</source>
+        <target>Pfad zum Wert</target>
+      </trans-unit>
+      <trans-unit id="tl_resource_tag.path.1">
+        <source>Enter here the path to the value e.g. [package][downloads][total]</source>
+        <target>Geben Sie hier den Pfad zum Wert an z.B. [package][downloads][total]</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -9,7 +9,12 @@ use Contao\Model;
  *
  * @property integer $id
  * @property integer $pid
- * @property string  $published
+ * @property integer $tstamp
+ * @property string  $alias
+ * @property string  $path
+ * @property string  $default
+ * @property string  $placeholder
+ * @property string  $placeholderText
  *
  * @method static ResourceTagModel|null findById($id, array $opt=array())
  * @method static ResourceTagModel|null findByPk($id, array $opt=array())

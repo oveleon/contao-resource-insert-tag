@@ -66,14 +66,14 @@ $GLOBALS['TL_DCA']['tl_resource_tag'] = array
 	// Palettes
 	'palettes' => array
 	(
-	    '__selector__'                => ['published'],
-		'default'                     => '{settings_legend},alias,path',
+	    '__selector__'                => ['placeholder'],
+		'default'                     => '{settings_legend},alias,path;{config_legend},default,placeholder',
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'published'                     => 'member',
+		'placeholder'                 => 'placeholderText',
 	),
 
 	// Fields
@@ -106,9 +106,31 @@ $GLOBALS['TL_DCA']['tl_resource_tag'] = array
             'exclude'                 => true,
             'inputType'               => 'text',
             'search'                  => true,
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
-            'sql'                     => "varchar(255) BINARY NOT NULL default ''" // ToDo: Increase
-        )
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'preserveTags'=>true, 'tl_class'=>'w50'),
+            'sql'                     => "text NULL"
+        ),
+        'default' => array
+        (
+            'exclude'                 => true,
+            'inputType'               => 'text',
+            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) BINARY NOT NULL default ''"
+        ),
+        'placeholder' => array
+        (
+            'exclude'                 => true,
+            'inputType'               => 'checkbox',
+            'eval'                    => array('tl_class'=>'w50 m12', 'submitOnChange'=>true),
+            'sql'                     => "char(1) NOT NULL default ''"
+        ),
+        'placeholderText' => array
+        (
+            'exclude'                 => true,
+            'search'                  => true,
+            'inputType'               => 'textarea',
+            'eval'                    => array('mandatory'=>true, 'allowHtml'=>true),
+            'sql'                     => "mediumtext NULL"
+        ),
 	)
 );
 

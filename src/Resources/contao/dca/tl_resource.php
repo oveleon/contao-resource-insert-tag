@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_resource'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},title,alias;{resource_legend},source,dataType,cache;',
+		'default'                     => '{title_legend},title,alias;{resource_legend},source,method,dataType;',
 	),
 
 	// Fields
@@ -117,10 +117,11 @@ $GLOBALS['TL_DCA']['tl_resource'] = array
 			'eval'                    => array('mandatory'=>true, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-		'cache' => array
-		(
-			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50 m12'),
+        'method' => array
+        (
+            'inputType'               => 'select',
+			'options'                 => array('GET', 'POST'),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		)
 	)

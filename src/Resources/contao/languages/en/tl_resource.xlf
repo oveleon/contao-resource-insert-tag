@@ -3,51 +3,39 @@
     <body>
       <trans-unit id="tl_resource.title_legend">
         <source>Title / Alias</source>
-        <target>Titel / Alias</target>
       </trans-unit>
       <trans-unit id="tl_resource.resource_legend">
         <source>Resource</source>
-        <target>Quelle</target>
       </trans-unit>
       <trans-unit id="tl_resource.title.0">
         <source>Title</source>
-        <target>Titel</target>
       </trans-unit>
       <trans-unit id="tl_resource.title.1">
         <source>Title of resource</source>
-        <target>Bitte geben Sie einen Quellen-Titel an.</target>
       </trans-unit>
       <trans-unit id="tl_resource.alias.0">
         <source>Alias / Constant</source>
-        <target>Alias / Konstante</target>
       </trans-unit>
       <trans-unit id="tl_resource.alias.1">
         <source>Enter the alias / constant here. This will be used to retrieve the insert tag later.</source>
-        <target>Geben Sie hier den Alias / die Konstante an. Dieser wird verwendet um den Insert-Tag später abzurufen.</target>
       </trans-unit>
       <trans-unit id="tl_resource.source.0">
         <source>Source url</source>
-        <target>Quell-URL</target>
       </trans-unit>
       <trans-unit id="tl_resource.source.1">
         <source>Enter the source URL here</source>
-        <target>Geben Sie hier die Quell-URL an</target>
       </trans-unit>
       <trans-unit id="tl_resource.method.0">
         <source>Method</source>
-        <target>Methode</target>
       </trans-unit>
       <trans-unit id="tl_resource.method.1">
         <source>Define here the method that is used to retrieve the source.</source>
-        <target>Definieren Sie hier die Methode, welche verwendet wird um die Quelle abzurufen.</target>
       </trans-unit>
       <trans-unit id="tl_resource.dataType.0">
         <source>Data-Type</source>
-        <target>Data-Typ</target>
       </trans-unit>
       <trans-unit id="tl_resource.dataType.1">
         <source>Define here how the source data is returned.</source>
-        <target>Definieren Sie hier wie die Quelldaten zurück geliefert werden.</target>
       </trans-unit>
     </body>
   </file>

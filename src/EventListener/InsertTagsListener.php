@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Oveleon\ContaoResourceInsertTag\EventListener;
 
 use Contao\CoreBundle\Framework\ContaoFramework;
+use Contao\System;
 use Oveleon\ContaoResourceInsertTag\ResourceModel;
 use Oveleon\ContaoResourceInsertTag\ResourceTagModel;
 use Symfony\Component\HttpClient\CachingHttpClient;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpKernel\HttpCache\Store;
-
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
@@ -44,6 +44,7 @@ class InsertTagsListener
      */
     public function onReplaceInsertTags(string $tag)
     {
+        $strValue = '';
         $elements = explode('::', $tag);
         $key = strtolower($elements[0]);
         $tok = strtolower($elements[1]);
@@ -51,14 +52,9 @@ class InsertTagsListener
 
         if(null !== $objResource)
         {
-            $httpClient = HttpClient::create();
-            $response = $httpClient->request('GET', $objResource->source);
-
-            // ToDo: Caching
-            #$store = new Store('/path/to/cache/storage/');
-            #$client = HttpClient::create();
-            #$client = new CachingHttpClient($client, $store);
-            #$response = $client->request('GET', 'https://example.com/cacheable-resource');
+            $store = new Store(System::getContainer()->getParameter('kernel.cache_dir'));
+            $client = new CachingHttpClient(HttpClient::create(), $store);
+            $response = $client->request($objResource->method, $objResource->source);
 
             if(200 === $response->getStatusCode())
             {
@@ -70,10 +66,34 @@ class InsertTagsListener
                     switch($objResource->dataType)
                     {
                         case 'json':
-                            return $this->replaceFromJSON($objInsertTag, $content);
+                            $strValue = $this->replaceFromJSON($objInsertTag, $content);
+                            break;
                         default:
-                            // ToDo: Hook
-                            return '';
+                            // HOOK: custom data type
+                            if (isset($GLOBALS['TL_HOOKS']['replaceResourceInsertTag']) && \is_array($GLOBALS['TL_HOOKS']['replaceResourceInsertTag']))
+                            {
+                                foreach ($GLOBALS['TL_HOOKS']['replaceResourceInsertTag'] as $callback)
+                                {
+                                    $strValue = System::importStatic($callback[0])->{$callback[1]}($objInsertTag, $content, $this);
+                                }
+                            }
+                    }
+
+                    if(!$strValue)
+                    {
+                        if($objInsertTag->default){
+                            $strValue = $objInsertTag->default;
+                        }
+
+                        return $strValue;
+                    }
+                    elseif($objInsertTag->placeholder)
+                    {
+                        return sprintf($objInsertTag->placeholderText, $strValue);
+                    }
+                    else
+                    {
+                        return $strValue;
                     }
                 }
             }

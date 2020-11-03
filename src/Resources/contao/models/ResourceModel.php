@@ -9,9 +9,10 @@ use Contao\Model;
  *
  * @property integer $id
  * @property string  $title
+ * @property string  $alias
  * @property string  $source
  * @property string  $dataType
- * @property integer $cache
+ * @property string  $method
  *
  * @method static ResourceModel|null findById($id, array $opt=array())
  * @method static ResourceModel|null findByPk($id, array $opt=array())

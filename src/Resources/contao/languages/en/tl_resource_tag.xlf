@@ -1,53 +1,41 @@
 <?xml version="1.0" ?><xliff version="1.1">
-  <file datatype="php" original="src/Resources/contao/languages/en/tl_resource_tag.php" source-language="en" target-language="de">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_resource_tag.php" source-language="en">
     <body>
       <trans-unit id="tl_resource_tag.settings_legend">
         <source>Alias / Path</source>
-        <target>Alias / Pfad</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.config_legend">
         <source>Config</source>
-        <target>Konfiguration</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.alias.0">
         <source>Alias / Tag</source>
-        <target>Alias / Tag</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.alias.1">
         <source>Enter the alias / tag used to retrieve the content.</source>
-        <target>Geben Sie hier den Alias / den Tag an, welcher dazu dient, den Inhalt abzurufen.</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.path.0">
         <source>Path</source>
-        <target>Pfad</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.path.1">
         <source>Enter here the path to the value e.g. [package][downloads][total]</source>
-        <target>Geben Sie hier den Pfad zum Wert an z.B. [package][downloads][total]</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.default.0">
         <source>Default</source>
-        <target>Standard</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.default.1">
         <source>Define a text that will be output if the value cannot be retrieved from the source.</source>
-        <target>Definieren Sie hier einen Text, welcher ausgegeben wird sofern der Wert nicht aus der Quelle geholt werden kann.</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.placeholder.0">
         <source>Use placeholder</source>
-        <target>Platzhalter verwenden</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.placeholder.1">
         <source>Allows you to enclose the value from the source with your own text.</source>
-        <target>Ermöglicht das umschließen des Wertes aus der Quelle mit eigenem Text.</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.placeholderText.0">
         <source>Placeholder text</source>
-        <target>Platzhalter-Text</target>
       </trans-unit>
       <trans-unit id="tl_resource_tag.placeholderText.1">
         <source>Please use the placeholder %s to output the value from the source.</source>
-        <target>Bitte verwenden Sie den Platzhalter %s um den Wert aus der Quelle auszugeben.</target>
       </trans-unit>
     </body>
   </file>

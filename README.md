@@ -37,4 +37,4 @@ composer require oveleon/contao-resource-insert-tag
 
 ### ToDo:
 
-- Handle caching
+- Handle resource caching

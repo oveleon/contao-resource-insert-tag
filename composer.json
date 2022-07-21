@@ -21,8 +21,8 @@
     "php":"^7.2",
     "ext-json": "*",
     "contao/core-bundle":"^4.4",
-    "symfony/http-client":"^4.0",
-    "symfony/http-kernel": "^4.0",
+    "symfony/http-client":"^4.0 || ^5.4",
+    "symfony/http-kernel": "^4.0 || ^5.4",
     "symfony/property-access": "^5.0"
   },
   "require-dev": {

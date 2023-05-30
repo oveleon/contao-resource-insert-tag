@@ -5,124 +5,101 @@
  *
  * (c) https://www.oveleon.de/
  */
-$GLOBALS['TL_DCA']['tl_resource'] = array
-(
+$GLOBALS['TL_DCA']['tl_resource'] = [
 	// Config
-	'config' => array
-	(
+	'config' => [
 		'dataContainer'               => 'Table',
-        'ctable'                      => array('tl_resource_tag'),
+        'ctable'                      => ['tl_resource_tag'],
         'enableVersioning'            => true,
-		'sql' => array
-		(
-			'keys' => array
-			(
+		'sql' => [
+			'keys' => [
 				'id' => 'primary'
-			)
-		)
-	),
+            ]
+        ]
+    ],
 
 	// List
-	'list' => array
-	(
-		'sorting' => array
-		(
+	'list' => [
+		'sorting' => [
 			'mode'                    => 2,
-			'fields'                  => array('title'),
+			'fields'                  => ['title'],
 			'panelLayout'             => 'sort,limit'
-		),
-		'label' => array
-		(
-            'fields'                  => array('title'),
+        ],
+		'label' => [
+            'fields'                  => ['title'],
             'showColumns'             => true
-		),
-		'global_operations' => array
-		(
-			'all' => array
-			(
+        ],
+		'global_operations' => [
+			'all' => [
 				'href'                => 'act=select',
 				'class'               => 'header_edit_all',
 				'attributes'          => 'onclick="Backend.getScrollOffset()" accesskey="e"'
-			)
-		),
-		'operations' => array
-		(
-            'edit' => array
-            (
+            ]
+        ],
+		'operations' => [
+            'edit' => [
                 'href'                => 'table=tl_resource_tag',
                 'icon'                => 'edit.svg',
-            ),
-            'editheader' => array
-            (
+            ],
+            'editheader' => [
                 'href'                => 'act=edit',
                 'icon'                => 'header.svg',
-            ),
-			'delete' => array
-			(
+            ],
+			'delete' => [
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
-				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-			),
-			'show' => array
-			(
+				'attributes'          => 'onclick="if(!confirm(\'' . ($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? null). '\'))return false;Backend.getScrollOffset()"'
+            ],
+			'show' => [
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
-			)
-		)
-	),
+            ]
+        ]
+    ],
 
 	// Palettes
-	'palettes' => array
-	(
+	'palettes' => [
 		'default'                     => '{title_legend},title,alias;{resource_legend},source,method,dataType;',
-	),
+    ],
 
 	// Fields
-	'fields' => array
-	(
-		'id' => array
-		(
+	'fields' => [
+		'id' => [
 			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-		),
-        'tstamp' => array
-        (
+        ],
+        'tstamp' => [
             'sql'                     => "int(10) unsigned NOT NULL default 0"
-        ),
-        'alias' => array
-        (
+        ],
+        'alias' => [
             'exclude'                 => true,
             'inputType'               => 'text',
             'search'                  => true,
-            'eval'                    => array('rgxp'=>'alias', 'mandatory'=>true, 'doNotCopy'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'eval'                    => ['rgxp'=>'alias', 'mandatory'=>true, 'doNotCopy'=>true, 'maxlength'=>255, 'tl_class'=>'w50'],
             'sql'                     => "varchar(255) BINARY NOT NULL default ''"
-        ),
-		'title' => array
-		(
+        ],
+		'title' => [
 			'exclude'                 => true,
 			'sorting'                 => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+			'eval'                    => ['mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'source' => array
-		(
+        ],
+		'source' => [
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'tl_class'=>'w50'),
+			'eval'                    => ['mandatory'=>true, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'dataType' => array
-		(
+        ],
+		'dataType' => [
 			'inputType'               => 'select',
-            'options'                 => array('json' => 'JSON'),
-			'eval'                    => array('mandatory'=>true, 'tl_class'=>'w50'),
+            'options'                 => ['json' => 'JSON'],
+			'eval'                    => ['mandatory'=>true, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-        'method' => array
-        (
+        ],
+        'method' => [
             'inputType'               => 'select',
-			'options'                 => array('GET', 'POST'),
-			'eval'                    => array('tl_class'=>'w50'),
+			'options'                 => ['GET', 'POST'],
+			'eval'                    => ['tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		)
-	)
-);
+        ]
+    ]
+];

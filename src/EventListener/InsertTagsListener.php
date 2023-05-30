@@ -68,6 +68,7 @@ class InsertTagsListener
                         case 'json':
                             $strValue = $this->replaceFromJSON($objInsertTag, $content);
                             break;
+
                         default:
                             // HOOK: custom data type
                             if (isset($GLOBALS['TL_HOOKS']['replaceResourceInsertTag']) && \is_array($GLOBALS['TL_HOOKS']['replaceResourceInsertTag']))

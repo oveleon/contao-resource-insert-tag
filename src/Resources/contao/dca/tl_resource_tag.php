@@ -1,138 +1,115 @@
 <?php
-$GLOBALS['TL_DCA']['tl_resource_tag'] = array
-(
+
+$GLOBALS['TL_DCA']['tl_resource_tag'] = [
 	// Config
-	'config' => array
-	(
+	'config' => [
 		'dataContainer'               => 'Table',
         'ptable'                      => 'tl_resource',
 		'enableVersioning'            => true,
-		'sql' => array
-		(
-			'keys' => array
-			(
+		'sql' => [
+			'keys' => [
 				'id' => 'primary'
-			)
-		)
-	),
+            ]
+        ]
+    ],
 
 	// List
-	'list' => array
-	(
-        'sorting' => array
-        (
+	'list' => [
+        'sorting' => [
             'mode'                    => 4,
-            'fields'                  => array('alias','tstamp'),
+            'fields'                  => ['alias','tstamp'],
             'panelLayout'             => 'limit',
-            'headerFields'            => array('title', 'alias'),
-            'child_record_callback'   => array('tl_resource_tag', 'listTags'),
+            'headerFields'            => ['title', 'alias'],
+            'child_record_callback'   => ['tl_resource_tag', 'listTags'],
             'disableGrouping'         => true
-        ),
-		'label' => array
-		(
-            'fields'                  => array('title', 'product'),
+        ],
+		'label' => [
+            'fields'                  => ['title', 'product'],
             'showColumns'             => true
-		),
-		'global_operations' => array
-		(
-			'all' => array
-			(
+        ],
+		'global_operations' => [
+			'all' => [
 				'href'                => 'act=select',
 				'class'               => 'header_edit_all',
 				'attributes'          => 'onclick="Backend.getScrollOffset()" accesskey="e"'
-			)
-		),
-		'operations' => array
-		(
-			'edit' => array
-			(
+            ]
+        ],
+		'operations' => [
+			'edit' => [
 				'href'                => 'act=edit',
 				'icon'                => 'edit.svg'
-			),
-			'delete' => array
-			(
+            ],
+			'delete' => [
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
-				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-			),
-			'show' => array
-			(
+				'attributes'          => 'onclick="if(!confirm(\'' . ($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? null) . '\'))return false;Backend.getScrollOffset()"'
+            ],
+			'show' => [
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
-			)
-		)
-	),
+            ]
+        ]
+    ],
 
 	// Palettes
-	'palettes' => array
-	(
+	'palettes' => [
 	    '__selector__'                => ['placeholder'],
 		'default'                     => '{settings_legend},alias,path;{config_legend},default,placeholder',
-	),
+    ],
 
 	// Subpalettes
-	'subpalettes' => array
-	(
+	'subpalettes' => [
 		'placeholder'                 => 'placeholderText',
-	),
+    ],
 
 	// Fields
-	'fields' => array
-	(
-		'id' => array
-		(
+	'fields' => [
+		'id' => [
 			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-		),
-        'pid' => array
-        (
+        ],
+        'pid' => [
             'foreignKey'              => 'tl_license.title',
             'sql'                     => "int(10) unsigned NOT NULL default 0",
-            'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
-        ),
-        'tstamp' => array
-        (
+            'relation'                => ['type'=>'belongsTo', 'load'=>'lazy']
+        ],
+        'tstamp' => [
             'sql'                     => "int(10) unsigned NOT NULL default 0"
-        ),
-        'alias' => array
-        (
+        ],
+        'alias' => [
             'exclude'                 => true,
             'inputType'               => 'text',
             'search'                  => true,
-            'eval'                    => array('rgxp'=>'alias', 'mandatory'=>true, 'doNotCopy'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'eval'                    => ['rgxp'=>'alias', 'mandatory'=>true, 'doNotCopy'=>true, 'maxlength'=>255, 'tl_class'=>'w50'],
             'sql'                     => "varchar(255) BINARY NOT NULL default ''"
-        ),
-        'path' => array
-        (
+        ],
+        'path' => [
             'exclude'                 => true,
             'inputType'               => 'text',
             'search'                  => true,
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'preserveTags'=>true, 'tl_class'=>'w50'),
+            'eval'                    => ['mandatory'=>true, 'maxlength'=>255, 'preserveTags'=>true, 'tl_class'=>'w50'],
             'sql'                     => "text NULL"
-        ),
-        'default' => array
-        (
+        ],
+        'default' => [
             'exclude'                 => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'eval'                    => ['maxlength'=>255, 'tl_class'=>'w50'],
             'sql'                     => "varchar(255) BINARY NOT NULL default ''"
-        ),
-        'placeholder' => array
-        (
+        ],
+        'placeholder' => [
             'exclude'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('tl_class'=>'w50 m12', 'submitOnChange'=>true),
+            'eval'                    => ['tl_class'=>'w50 m12', 'submitOnChange'=>true],
             'sql'                     => "char(1) NOT NULL default ''"
-        ),
-        'placeholderText' => array
-        (
+        ],
+        'placeholderText' => [
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'textarea',
-            'eval'                    => array('mandatory'=>true, 'allowHtml'=>true),
+            'eval'                    => ['mandatory'=>true, 'allowHtml'=>true],
             'sql'                     => "mediumtext NULL"
-        ),
-	)
-);
+        ]
+    ]
+];
 
 /**
  * Provide miscellaneous methods that are used by the data configuration array.
